@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" id="inputNode">
+  <button type="button">search</button>
+
+  <script>
+    let inputNode = document.querySelector('#inputNode');
+    let timer;
+    inputNode.addEventListener('keyup', function () {
+      let value = inputNode.value;
+      if (timer) {
+        clearTimeout(timer);
+      }
+      timer = setTimeout(() => {
+        sndAjax(value);
+      }, 300);
+    })
+
+    function sndAjax(data) {
+      console.log(data);
+    }
+  </script>
+</body>
+
+</html>
